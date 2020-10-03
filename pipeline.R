@@ -12,6 +12,7 @@ BiocManager::install("DESeq2")
 # library(Rhisat2)
 # library(DESeq2)
 
+source("1_align_hisat.R")
 
 
 
