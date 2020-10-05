@@ -14,9 +14,14 @@ RUN \
 # RUN R -e "install.packages('git2r', dependencies = TRUE, repos = 'http://cran.rstudio.com/')"
 # RUN R -e "install.packages('remotes', dependencies = FALSE, repos = 'http://cran.rstudio.com/')"
 
-## Install packages from GitHub
-RUN mkdir -p /tmp
-COPY ../0_install_pkgs.R /tmp/0_install_pkgs.R
-RUN Rscript /tmp/0_install_pkgs.R
+## Install packages
+#RUN mkdir -p /tmp
+#COPY 0_install_pkgs.R /tmp/0_install_pkgs.R
+#RUN Rscript /tmp/0_install_pkgs.R
+
+RUN R -e "install.packages('BiocManager', repos = 'http://cran.us.r-project.org')"
+RUN R -e "BiocManager::install('Rhisat2')"
+RUN R -e "BiocManager::install('DESeq2')"
+
 
 EXPOSE 8787
