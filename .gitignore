@@ -1,2 +1,7 @@
 
 .Rhistory
+*.sam
+*.bam
+*.bai
+*.fastq
+*.gz
