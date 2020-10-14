@@ -10,6 +10,3 @@ source("2_convert_and_filter.R")
 source("3_map.R")
 source("4_compare_deseq2.R")
 
-
-
-
