@@ -1,12 +1,14 @@
 ## Load in Packages
 # library(dplyr)
+# library(stringr)
 # library(Rhisat2)
 # library(DESeq2)
 
 # source("0_install_pkgs.R")
 source("1_align_hisat.R")
-source("2_map.R")
-source("3_comparison_deseq2.R")
+source("2_convert_and_filter.R")
+source("3_map.R")
+source("4_compare_deseq2.R")
 
 
 
