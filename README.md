@@ -1,23 +1,12 @@
 # Transcriptomics of _P. vivax_ from Ethiopia
 
 ## Process
-1. Align to and remove human reads (using HISAT2).
-2. Map remaining reads to _P. vivax_ genome.
-3. Compare the 43 transcript expressions relative to Saimiri (Duffy-negative) and Aotus monkey _P. vivax_ from Gunalan et al. (2019) paper (using DESeq2 or edgeR).
-4. Compare the 43 transcript expressions relative to the 26 Cambodian _P. vivax_ from Kim et al. (2019) paper.
-
-
-## Docker
-
-To build Docker image, navigate to the `docker` folder and run:
-```
-docker build -t vivax_pipeline .
-```
-
-Then run the following to access an RStudio Server:
-```
-docker run --name vivax_pipeline --rm -p 8787:8787 vivax_pipeline
-```
+1. Align to reference sequences (using HISAT2).
+2. Remove human reads from alignment (using Samtools).
+3. Map remaining reads to _P. vivax_ genome.
+4. Compare the 43 transcript expressions
+    - relative to Saimiri (Duffy-negative) and Aotus monkey _P. vivax_ from Gunalan et al. (2019) paper (using DESeq2 or edgeR).
+    - relative to the 26 Cambodian _P. vivax_ from Kim et al. (2019) paper.
 
 ## Reference Sequences
 From: https://www.ncbi.nlm.nih.gov/genome/35
@@ -39,3 +28,17 @@ From: https://www.ncbi.nlm.nih.gov/genome/35
 |  Chr 	|  13  	| [NC_009918.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_009918.1) 	|    2.03   	| 45.7 	|   445   	|  449 	|
 |  Chr 	|  14  	| [NC_009919.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_009919.1) 	|    3.12   	|  43  	|   691   	|  699 	|
 |      	|  MT  	| [NC_007243.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_007243.1) 	|    0.01   	| 30.5 	|    3    	|   3  	|
+
+
+
+## Docker
+
+To build Docker image, navigate to the `docker` folder and run:
+```
+docker build -t vivax_pipeline .
+```
+
+Then run the following to access an RStudio Server:
+```
+docker run --name vivax_pipeline --rm -p 8787:8787 vivax_pipeline
+```
