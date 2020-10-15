@@ -11,7 +11,7 @@
 ## Reference Sequences
 From: https://www.ncbi.nlm.nih.gov/genome/35
 
-| Type 	| Name 	|                              RefSeq                             	| Size (Mb) 	|  GC% 	| Protein 	| Gene 	|
+| Type 	| Name 	|                              RefSeq                             	| Size (Mb) 	|  GC% 	| Proteins 	| Genes	|
 |:----:	|:----:	|:---------------------------------------------------------------:	|:---------:	|:----:	|:-------:	|:----:	|
 |  Chr 	|   1  	| [NC_009906.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_009906.1) 	|    0.83   	| 47.1 	|   167   	|  176 	|
 |  Chr 	|   2  	| [NC_009907.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_009907.1) 	|    0.76   	| 44.9 	|   154   	|  162 	|
