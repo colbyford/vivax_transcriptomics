@@ -40,7 +40,7 @@ for (i in seq_along(samples$SampleID)){
   
   hisat2(sequences=as.list(reads), index=file.path(dir, "vivax_index"),
          type="paired", outfile=file.path(dir, paste0(samples$SampleID[i], "_output.sam")),
-         force=TRUE, strict=TRUE, execute=TRUE)
+         threads = parallel::detectCores()-1, force=TRUE, strict=TRUE, execute=TRUE)
   
 }
   

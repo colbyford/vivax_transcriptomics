@@ -12,6 +12,9 @@ BiocManager::install("Rhisat2")
 # Rsamtools: https://bioconductor.org/packages/release/bioc/vignettes/Rsamtools/inst/doc/Rsamtools-Overview.pdf
 BiocManager::install("Rsamtools")
 
+# Rsubread: https://bioconductor.org/packages/release/bioc/vignettes/Rsubread/inst/doc/SubreadUsersGuide.pdf
+BiocManager::install("Rsubread")
+
 # DESeq2: https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
 # devtools::install_github("mikelove/DESeq2")
 BiocManager::install("DESeq2")
