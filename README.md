@@ -9,7 +9,7 @@
     - relative to the 26 Cambodian _P. vivax_ from Kim et al. (2019) paper.
 
 ## Reference Sequences
-From: https://www.ncbi.nlm.nih.gov/genome/35
+_Plasmodium vivax_ ASM241v2 - From: https://www.ncbi.nlm.nih.gov/genome/35
 
 | Type 	| Name 	|                              RefSeq                             	| Size (Mb) 	|  GC% 	| Proteins 	| Genes	|
 |:----:	|:----:	|:---------------------------------------------------------------:	|:---------:	|:----:	|:-------:	|:----:	|
