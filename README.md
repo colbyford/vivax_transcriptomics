@@ -29,7 +29,8 @@ _Plasmodium vivax_ ASM241v2 - From: https://www.ncbi.nlm.nih.gov/genome/35
 |  Chr 	|  14  	| [NC_009919.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_009919.1) 	|    3.12   	|  43  	|   691   	|  699 	|
 |      	|  MT  	| [NC_007243.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_007243.1) 	|    0.01   	| 30.5 	|    3    	|   3  	|
 
-
+### Annotation
+Plasmodium vivax Sal-1 (Version: 2015-06-18) from PlasmoDB: https://plasmodb.org/plasmo/app/downloads/Current_Release/PvivaxSal1/gff/data/
 
 ## Docker
 
