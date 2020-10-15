@@ -30,7 +30,7 @@ _Plasmodium vivax_ ASM241v2 - From: https://www.ncbi.nlm.nih.gov/genome/35
 |      	|  MT  	| [NC_007243.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_007243.1) 	|    0.01   	| 30.5 	|    3    	|   3  	|
 
 ### Annotation
-_Plasmodium vivax P01_ (Version: [2015-06-18](https://plasmodb.org/plasmo/app/record/organism/TMPTX_pvivP01#SequenceCounts)) from PlasmoDB: https://plasmodb.org/plasmo/app/downloads/Current_Release/PvivaxP01/gff/data/
+_Plasmodium vivax P01_ (Version: [2018-02-28](https://plasmodb.org/plasmo/app/record/organism/TMPTX_pvivP01#SequenceCounts)) from PlasmoDB: https://plasmodb.org/plasmo/app/downloads/Current_Release/PvivaxP01/gff/data/
 
 ## Docker
 
