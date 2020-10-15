@@ -4,6 +4,7 @@
 # library(Rhisat2)
 # library(Rsubread)
 # library(DESeq2)
+library(dplyr)
 
 # source("0_install_pkgs.R")
 source("1_align_hisat.R")
