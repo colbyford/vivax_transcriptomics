@@ -3,9 +3,10 @@
 ## Process
 1. Align to reference sequences (using HISAT2).
 2. Remove human reads from alignment (using Samtools).
-3. Map remaining reads to _P. vivax_ genome.
-4. Compare the 43 transcript expressions
-    - relative to Saimiri (Duffy-negative) and Aotus monkey _P. vivax_ from Gunalan et al. (2019) paper (using DESeq2 or edgeR).
+3. Map remaining reads to _P. vivax_ genome (using Rsubread) and count gene frequencies.
+4. Perform deconvolution of the samples (using CIBERSORTx).
+5. Compare the 43 transcript expressions (using DESeq2 or edgeR)...
+    - relative to Saimiri (Duffy-negative) and Aotus monkey _P. vivax_ from Gunalan et al. (2019) paper.
     - relative to the 26 Cambodian _P. vivax_ from Kim et al. (2019) paper.
 
 ## Reference Sequences
