@@ -6,6 +6,8 @@ cts <- read.csv("output/feature_counts.csv",
                 row.names="gene_id") %>%
   as.matrix()
 
+coldata <- read.csv("refs/") 
+
 dds <- DESeqDataSetFromMatrix(countData = cts,
                               colData = coldata,
                               design = ~ stage)
