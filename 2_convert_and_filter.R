@@ -2,7 +2,8 @@ library(Rsamtools)
 library(stringr)
 
 ## List all output SAM files
-sam_files <- list.files("output/", full.names=TRUE, pattern="\\.sam$")
+# sam_files <- list.files("output/", full.names=TRUE, pattern="\\.sam$")
+sam_files <- list.files("output", full.names=TRUE, pattern="\\.sam$")
 
 ## Convert all SAM files to BAM
 cat("Converting", length(sam_files), "SAM files to BAM.\n")
@@ -12,7 +13,8 @@ lapply(sam_files, asBam)
 
 
 ## List all output BAM files
-bam_files <- list.files("output/", full.names=TRUE, pattern="\\.bam$")
+# bam_files <- list.files("output/", full.names=TRUE, pattern="\\.bam$")
+bam_files <- list.files("output", full.names=TRUE, pattern="\\.bam$")
 
 # bams <- BamFileList(bam_files)
 # seqinfo(bams)
