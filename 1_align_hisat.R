@@ -8,7 +8,8 @@ library(Rhisat2)
 # td <- tempdir()
 
 
-refs <- list.files("refs/", full.names=TRUE, pattern="\\.fasta$")
+# refs <- list.files("refs/", full.names=TRUE, pattern="\\.fasta$")
+refs <- list.files("refs", full.names=TRUE, pattern="\\.fasta$")
 
 dir <- "output"
 
@@ -26,7 +27,7 @@ hisat2_build(references=refs, outdir=dir, prefix="vivax_index",
 
 # reads <- list.files("../../../Dropbox (UNC Charlotte)/ELo_vivax_transcriptomics_ethiopia/30-387789029/00_fastq", pattern="\\.fastq.gz$", full.names=TRUE)
 
-samples <- read.table("sample_summary.txt", header = TRUE)
+samples <- read.table("sample_summary.txt", header = TRUE, stringsAsFactors = FALSE)
 
 for (i in seq_along(samples$SampleID)){
   cat("Processing Sample:", samples$SampleID[i], "\n")
