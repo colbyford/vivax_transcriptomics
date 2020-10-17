@@ -10,5 +10,6 @@ library(dplyr)
 source("1_align_hisat.R")
 source("2_convert_and_filter.R")
 source("3_map.R")
-# source("4_compare_deseq2.R")
+source("4_deconvolute.R")
+# source("5_compare_deseq2.R")
 
