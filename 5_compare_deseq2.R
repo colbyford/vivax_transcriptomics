@@ -11,3 +11,6 @@ coldata <- read.csv("refs/")
 dds <- DESeqDataSetFromMatrix(countData = cts,
                               colData = coldata,
                               design = ~ stage)
+
+dds <- DESeq(dds)
+res <- results(dds)
