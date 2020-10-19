@@ -1,2 +1,11 @@
-"file_original","file_filtered","records_original","records_filtered"
-"GHC-017_output.bam","GHC-017_output_filtered.bam",9515113,3651268
+"file_original","file_filtered","records_in_original","records_in_filtered"
+"GHC-006_output.bam","GHC-006_output_filtered.bam",67083867,11990751
+"GHC-017_output.bam","GHC-017_output_filtered.bam",77994130,29462355
+"GHC-022_output.bam","GHC-022_output_filtered.bam",58127642,2804211
+"GHC-025_output.bam","GHC-025_output_filtered.bam",70576280,27129141
+"JHC-001_output.bam","JHC-001_output_filtered.bam",56553434,19973887
+"JHC-005_output.bam","JHC-005_output_filtered.bam",63329203,23084387
+"SGH-003_output.bam","SGH-003_output_filtered.bam",57326191,20074904
+"SGH-006_output.bam","SGH-006_output_filtered.bam",59058941,9458669
+"SGH-007_output.bam","SGH-007_output_filtered.bam",60602433,21854380
+"UHC-020_output.bam","UHC-020_output_filtered.bam",70228709,27701740
