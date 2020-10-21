@@ -7,9 +7,11 @@ options(repos = r)
 ## Install Packages
 if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")
-  install.packages("stringr")
 }
-  
+
+install.packages("stringr")
+install.packages("pheatmap")
+
 
 # Hisat2: https://bioconductor.org/packages/release/bioc/vignettes/Rhisat2/inst/doc/Rhisat2.html
 # devtools::install_github("fmicompbio/Rhisat2")
