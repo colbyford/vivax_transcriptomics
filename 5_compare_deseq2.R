@@ -10,7 +10,7 @@ coldata <- read.csv("refs/")
 
 dds <- DESeqDataSetFromMatrix(countData = cts,
                               colData = coldata,
-                              design = ~ stage)
+                              design = ~ group)
 
 dds <- DESeq(dds)
 res <- results(dds)
