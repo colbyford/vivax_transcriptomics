@@ -1,6 +1,8 @@
 library(ShortRead)
 library(Biostrings)
 
+## Filter out reads that have genes that are not expressed in a particular stage of interest
+
 fastq_orig <- readFastq("reads/GHC-022_R1_001.fastq")
 
 # genes_to_find <- readFasta("refs/schizont_filter_ex2.fasta") 
