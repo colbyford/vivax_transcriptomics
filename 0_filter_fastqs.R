@@ -5,7 +5,7 @@ library(stringr)
 
 
 ## Filter out reads that have genes that are not expressed in a particular stage/cell type of interest
-samples <- read.table("sample_summary.txt", header = TRUE)
+samples <- read.table("sample_summary.txt", header = TRUE, stringsAsFactors = FALSE)
 
 ## Genes that are NOT expressed in Schizonts
 # genes_to_find <- readFasta("refs/schizont_filter_ex2.fasta") 
