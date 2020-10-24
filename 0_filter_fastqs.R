@@ -1,30 +1,115 @@
 library(ShortRead)
 library(Biostrings)
 
-## Filter out reads that have genes that are not expressed in a particular stage of interest
 
-fastq_orig <- readFastq("reads/GHC-022_R1_001.fastq")
 
+## Filter out reads that have genes that are not expressed in a particular stage/cell type of interest
+input_R1_fastq_path <- "reads/GHC-022_R1_001.fastq"
+output_R1_fastq_path <- paste0(str_remove(input_R1_fastq_path, ".fastq"), "_filtered.fastq")
+input_R2_fastq_path <- str_replace(input_R1_fastq_path, "_R1_", "_R2_")
+output_R2_fastq_path <- paste0(str_remove(input_R2_fastq_path, ".fastq"), "_filtered.fastq")
+
+
+fastq_orig <- readFastq(input_R1_fastq_path)
+
+## Genes that are NOT expressed in Schizonts
 # genes_to_find <- readFasta("refs/schizont_filter_ex2.fasta") 
-genes_to_find <- readDNAStringSet("refs/schizont_filter_ex2.fasta")# %>% PDict(algorithm = "Twobit")
+genes_to_find <- readDNAStringSet("refs/schizont_filter_ex2.fasta")
 
-vmatchPattern(genes_to_find$PVP01_0109100 %>%
-                as.character(),
-              fastq_orig,
-              max.mismatch=5)
+# gene_iter <- genes_to_find$PVP01_0109100 %>% as.character()
+# pct_variability <- 0.05
+# mismatch_threshold <- (nchar(gene_iter) * pct_variability) %>% as.integer()
 
-# awhichPDict(pdict,
-#            subject,
-#            max.mismatch=5,
-#            min.mismatch=0,
-#            with.indels=FALSE,
-#            fixed=TRUE,
-#            algorithm="auto",
-#            verbose=FALSE)
+# gene_iter <- "NGGAAGTTTCCAGAGATGGATGCGTGCTCGAAAGGGAACCTGCACACATGTGCTGCATGGCTGTCGTCAGCTCGTGTCGTGAGATGTTGGGTTAAGTGCCGCAACGAGCGCAACCCTTGTCATTAGTTGCTACATTCAGTTGAGCACTCT"
+pct_variability <- 0.10
+# mismatch_threshold <- (mean(fastq_orig@sread@ranges@width) * pct_variability) %>% as.integer()
 
-## filter reads to keep those with GC < 0.7
-fun <- function(x) {
-  gc <- alphabetFrequency(sread(x), baseOnly=TRUE)[,c("G", "C")]
-  x[rowSums(gc) / width(x) < .7]    
+
+## Intialize list for which reads to keep (FALSEs) or remove (TRUEs)
+match_list <- c(rep(FALSE, length(fastq_orig)))
+
+# matches <- vmatchPattern(gene_iter,
+#                          fastq_orig@sread,
+#                          with.indels=TRUE,
+#                          max.mismatch = mismatch_threshold)
+
+
+## Cluster Setup
+library(doParallel)
+library(foreach)
+cl <- makeCluster(parallel::detectCores()-1, outfile = "read_filtering.log")
+registerDoParallel(cl)
+# clusterExport(cl, c("matchPattern", "%>%"), envir=environment())
+
+## Find the read segment in the reference gene
+search_read <- function(x, gene, pct_variability = 0.10){
+  cat("\tSearching for matches in read: ", x, "\n")
+  
+  read <- fastq_orig@sread[x] %>% as.character()
+  
+  mismatch_threshold <- (nchar(read) * pct_variability) %>% as.integer()
+  
+  read_matches <- Biostrings::matchPattern(read,
+                                           gene %>% 
+                                             Biostrings::DNAString(),
+                                           with.indels=TRUE,
+                                           max.mismatch = mismatch_threshold)
+  
+  if (length(read_matches) > 0){
+    cat("\t[Found a match!]\n")
+    match_list[x] = TRUE
+  }
+  
+  rm(read_matches)
 }
-filterFastq(fl, tempfile(), filter=fun)
+
+
+for (g in seq_along(genes_to_find)){
+  gene <- genes_to_find[g] %>% as.character()
+  
+  cat("Current filter gene: ", names(gene), "\n")
+  
+  foreach(i = seq_along(fastq_orig@sread), .verbose = TRUE) %dopar% 
+    search_read(i, gene, pct_variability)
+  # mclapply(seq_along(fastq_orig@sread),
+  #          search_read,
+  #          mc.cores = if (.Platform$OS.type == "windows") 1 else parallel::detectCores()-1)
+}
+
+stopCluster(cl)
+
+
+# for (g in seq_along(genes_to_find)){
+#   gene_iter <- genes_to_find[g] %>% as.character()
+# 
+#   cat("Current filter gene: ", names(gene_iter), "\n")
+#   
+#   for (i in seq_along(fastq_orig@sread)){
+#     
+#     cat("\tSearching for matches in read: ", i, "\n")
+#     
+#     matches <- matchPattern(fastq_orig@sread[i] %>%
+#                               as.character(),
+#                             gene_iter %>% 
+#                               Biostrings::DNAString(),
+#                             with.indels=TRUE,
+#                             max.mismatch = mismatch_threshold)
+#     
+#     if (length(matches) > 0){
+#       match_list[i] = TRUE
+#     }
+#   }
+# }
+
+
+which(match_list)
+
+## Function to filter out these matching reads
+fun <- function(x) {
+  x[-match_list]    
+}
+
+## Filter R1 and R2 FAST
+filterFastq(input_R1_fastq_path, output_R1_fastq_path, filter=fun)
+
+filterFastq(input_R2_fastq_path, output_R2_fastq_path, filter=fun)

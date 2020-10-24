@@ -22,6 +22,7 @@ RUN \
 RUN R -e "install.packages('BiocManager', repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages('stringr', repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages('pheatmap', repos = 'http://cran.us.r-project.org')"
+RUN R -e "BiocManager::install('ShortRead')"
 RUN R -e "BiocManager::install('Rhisat2')"
 RUN R -e "BiocManager::install('Rsamtools')"
 RUN R -e "BiocManager::install('Rsubread')"

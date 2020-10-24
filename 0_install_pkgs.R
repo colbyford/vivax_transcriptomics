@@ -13,6 +13,9 @@ install.packages("stringr")
 install.packages("pheatmap")
 
 
+# ShortRead: http://bioconductor.org/packages/release/bioc/vignettes/ShortRead/inst/doc/Overview.pdf
+BiocManager::install("ShortRead")
+
 # Hisat2: https://bioconductor.org/packages/release/bioc/vignettes/Rhisat2/inst/doc/Rhisat2.html
 # devtools::install_github("fmicompbio/Rhisat2")
 BiocManager::install("Rhisat2")
