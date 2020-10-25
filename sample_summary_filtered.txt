@@ -1,0 +1,11 @@
+SampleID	FileR1	FileR2
+GHC-006	reads/GHC-006_R1_001_filtered.fastq	reads/GHC-006_R2_001_filtered.fastq
+GHC-017	reads/GHC-017_R1_001_filtered.fastq	reads/GHC-017_R2_001_filtered.fastq
+GHC-022	reads/GHC-022_R1_001_filtered.fastq	reads/GHC-022_R2_001_filtered.fastq
+GHC-025	reads/GHC-025_R1_001_filtered.fastq	reads/GHC-025_R2_001_filtered.fastq
+JHC-001	reads/JHC-001_R1_001_filtered.fastq	reads/JHC-001_R2_001_filtered.fastq
+JHC-005	reads/JHC-005_R1_001_filtered.fastq	reads/JHC-005_R2_001_filtered.fastq
+SGH-003	reads/SGH-003_R1_001_filtered.fastq	reads/SGH-003_R2_001_filtered.fastq
+SGH-006	reads/SGH-006_R1_001_filtered.fastq	reads/SGH-006_R2_001_filtered.fastq
+SGH-007	reads/SGH-007_R1_001_filtered.fastq	reads/SGH-007_R2_001_filtered.fastq
+UHC-020	reads/UHC-020_R1_001_filtered.fastq	reads/UHC-020_R2_001_filtered.fastq
