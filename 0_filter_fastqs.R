@@ -99,8 +99,8 @@ for (sample in 1:nrow(samples)){
   }
   
   ## Fix any skipped reads at the end
-  
   length(match_list) <- length(fastq_orig)
+  match_list[is.na(match_list)] <- FALSE
   
   
   # stopCluster(cl)
