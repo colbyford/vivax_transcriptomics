@@ -12,11 +12,11 @@ if (length(args)==0) {
 } else if (length(args)==1) {
   # default to only the first gene
   args[2] = 1
-  cat("Using sample name:", args[1],"\tFiltering using:", args[2], "gene.\n")
+  cat("Using sample name:", args[1],"\tFiltering using:", args[2], "gene(s).\n")
 } else if (length(args)==2) {
-  cat("Using sample name:", args[1],"\tFiltering using:", args[2], "gene.\n")
+  cat("Using sample name:", args[1],"\tFiltering using:", args[2], "gene(s).\n")
 } else {
-  cat("Too many arguments. Only the first 2 will be used.\n")
+  warning("Too many arguments. Only the first 2 will be used.\n")
 }
 
 ## Filter out reads that have genes that are not expressed in a particular stage/cell type of interest
