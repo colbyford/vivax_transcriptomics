@@ -29,9 +29,9 @@ sample <- which(samples$SampleID %in% as.character(args[1]))
 genes <- readDNAStringSet("refs/schizont_filter_all29.fasta")[1:as.numeric(args[2])]
 
 input_R1_fastq_path <- samples$FileR1[sample]
-output_R1_fastq_path <- paste0(str_remove(input_R1_fastq_path, ".fastq"), "_filtered.fastq")
+output_R1_fastq_path <- paste0(str_remove(input_R1_fastq_path, ".fastq"), "_filtered_", args[2], ".fastq")
 input_R2_fastq_path <- samples$FileR2[sample]
-output_R2_fastq_path <- paste0(str_remove(input_R2_fastq_path, ".fastq"), "_filtered.fastq")
+output_R2_fastq_path <- paste0(str_remove(input_R2_fastq_path, ".fastq"), "_filtered_", args[2], ".fastq")
 
 cat("Now reading sample:", samples$SampleID[sample],"\n")
 
