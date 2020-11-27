@@ -37,17 +37,25 @@ output_R2_fastq_path <- paste0(str_remove(input_R2_fastq_path, ".fastq"), "_filt
 cat("Now reading sample:", samples$SampleID[sample],"\n")
 
 ## Filter out reads from the input R1 (and R2) sample files
-## Filter out reads from the input R1 (and R2) sample files
+
+library(doParallel)
+no_cores <- detectCores() - 1
+cl <- makeCluster(no_cores)
+registerDoParallel(cl)
+
+
 filter_reads(input_path = input_R1_fastq_path,
              output_path = output_R1_fastq_path,
-             genes_to_find = genes,                 # Genes that do not occur in the desired cell type
-             # eliminate_matches = TRUE,              # Remove genes that match from the exclusion list
-             eliminate_matches = FALSE,             # Only keep genes that match
+             genes_to_find = genes,
+             eliminate_matches = TRUE,
              pct_variability = 0.10,
              paired = TRUE,
              input_r2_path = input_R2_fastq_path,
              output_r2_path = output_R2_fastq_path,
+             # par_method = "multicore",
              par_method = "foreach",
              verbose = FALSE)
+
+stopCluster(cl)
 
 
