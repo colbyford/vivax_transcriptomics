@@ -26,7 +26,8 @@ sample <- which(samples$SampleID %in% as.character(args[1]))
 # sample <- which(samples$SampleID %in% "GHC-006")
 
 ## Genes that are NOT expressed in Schizonts
-genes <- readDNAStringSet("refs/schizont_filter_all29.fasta")[1:as.numeric(args[2])]
+# genes <- readDNAStringSet("refs/schizont_filter_all29.fasta")[1:as.numeric(args[2])]
+genes <- readDNAStringSet("refs/PVP01_Genes_Schizont_gt1_concatenated.fasta")
 
 input_R1_fastq_path <- samples$FileR1[sample]
 output_R1_fastq_path <- paste0(str_remove(input_R1_fastq_path, ".fastq"), "_filtered_", args[2], ".fastq")
@@ -36,14 +37,17 @@ output_R2_fastq_path <- paste0(str_remove(input_R2_fastq_path, ".fastq"), "_filt
 cat("Now reading sample:", samples$SampleID[sample],"\n")
 
 ## Filter out reads from the input R1 (and R2) sample files
+## Filter out reads from the input R1 (and R2) sample files
 filter_reads(input_path = input_R1_fastq_path,
              output_path = output_R1_fastq_path,
              genes_to_find = genes,                 # Genes that do not occur in the desired cell type
-             eliminate_matches = TRUE,              # Remove genes that match from the exclusion list
+             # eliminate_matches = TRUE,              # Remove genes that match from the exclusion list
+             eliminate_matches = FALSE,             # Only keep genes that match
              pct_variability = 0.10,
              paired = TRUE,
              input_r2_path = input_R2_fastq_path,
              output_r2_path = output_R2_fastq_path,
+             par_method = "foreach",
              verbose = FALSE)
 
 
