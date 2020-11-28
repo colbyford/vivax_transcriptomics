@@ -38,6 +38,8 @@ cat("Now reading sample:", samples$SampleID[sample],"\n")
 
 ## Filter out reads from the input R1 (and R2) sample files
 
+
+## Set up locatl parallelism
 library(doParallel)
 no_cores <- detectCores() - 1
 cl <- makeCluster(no_cores)
