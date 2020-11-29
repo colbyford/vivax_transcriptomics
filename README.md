@@ -1,6 +1,7 @@
 # Transcriptomics of _P. vivax_ from Ethiopia
 
 ## Process
+0. Filter reads using Schizont transcriptional profile.
 1. Align to reference sequences (using HISAT2).
 2. Remove human reads from alignment (using Samtools).
 3. Map remaining reads to _P. vivax_ genome (using Rsubread) and count gene frequencies.
