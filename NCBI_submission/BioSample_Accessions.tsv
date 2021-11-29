@@ -1,0 +1,11 @@
+bioproject_accession	accession	sample_name	organism	collection_date	geo_loc_name	host	isol_growth_condt	lat_lon
+PRJNA784582	SAMN23492745	GHC-006	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Gojeb	Homo sapiens	missing	7.3401 N 37.3477 E
+PRJNA784582	SAMN23492746	GHC-017	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Gojeb	Homo sapiens	missing	7.3401 N 37.3477 E
+PRJNA784582	SAMN23492747	GHC-022	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Gojeb	Homo sapiens	missing	7.3401 N 37.3477 E
+PRJNA784582	SAMN23492748	GHC-025	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Gojeb	Homo sapiens	missing	7.3401 N 37.3477 E
+PRJNA784582	SAMN23492749	JHC-001	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Jimma	Homo sapiens	missing	7.6739 N 36.8358 E
+PRJNA784582	SAMN23492750	JHC-005	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Jimma	Homo sapiens	missing	7.6739 N 36.8358 E
+PRJNA784582	SAMN23492751	SGH-003	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Shanan Gibe	Homo sapiens	missing	7.6568 N 36.8450 E
+PRJNA784582	SAMN23492752	SGH-006	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Shanan Gibe	Homo sapiens	missing	7.6568 N 36.8450 E
+PRJNA784582	SAMN23492753	SGH-007	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Shanan Gibe	Homo sapiens	missing	7.6568 N 36.8450 E
+PRJNA784582	SAMN23492754	UHC-020	Plasmodium vivax	10-Sep-2019/25-Nov-2019	Ethiopia: Gimbo	Homo sapiens	missing	7.4 N 36.2333 E
