@@ -11,7 +11,8 @@ counts <- read_xlsx("../output/GametocyteGene_Counts.xlsx")
 
 counts_pvt <- counts %>% select(!Description) %>% 
   pivot_longer(!`Gene ID`, names_to = "SampleID", values_to = "Count") %>% 
-  filter(`Gene ID` %in% c("PVP01_0616100", "PVP01_1119500", "PVP01_0904300"))
+  filter(`Gene ID` %in% c("PVP01_0616100", "PVP01_1119500", "PVP01_0904300")) %>% 
+  filter(!`SampleID` %in% c("GHC.006", "GHC.022"))
 
 
 ggplot(data = counts_pvt, aes(x=`Gene ID`, y=Count)) + 
