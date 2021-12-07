@@ -16,7 +16,7 @@ counts_pvt <- counts %>% select(!Description) %>%
 
 
 ggplot(data = counts_pvt, aes(x=`Gene ID`, y=Count)) + 
-  geom_beeswarm(data=counts_pvt, aes(x=`Gene ID`, y=Count, color=SampleID)) +
+  geom_beeswarm(data=counts_pvt, aes(x=`Gene ID`, y=Count, color=SampleID), size = 3) +
   # geom_dotplot(binaxis='y', stackdir='center', dotsize=1) +
   geom_boxplot(alpha = 0.5) +
   xlab("Gene ID") +
