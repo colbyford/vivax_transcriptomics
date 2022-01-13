@@ -1,4 +1,8 @@
-# Transcriptomics of _P. vivax_ from Ethiopia
+# Gene Polymorphisms Among Plasmodium vivax Geographical Isolates and the Potential as New Biomarkers for Gametocyte Detection
+
+<h3 align="right">Anthony Ford, Daniel Kepple, Jonathan Williams, Gabrielle Kolesar, Colby T. Ford, <br>Abnet Abebe, Lemu Golassa, Daniel A. Janies, Delenasaw Yewhalaw, and Eugenia Lo</h3>
+
+Companion Respository for Frontiers in Cellular and Infection Microbiology Paper: https://www.frontiersin.org/articles/10.3389/fcimb.2021.789417
 
 ## Process
 0. Filter reads using Schizont transcriptional profile.
